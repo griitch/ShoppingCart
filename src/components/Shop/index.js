@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import shopContext from "../ShopContext";
-import { Link } from "react-router-dom";
 import useFetch from "../useFetch";
+import Container from "./Container";
+import Card from "../Card";
 
 function Shop() {
   // eslint-disable-next-line no-unused-vars
@@ -12,22 +13,21 @@ function Shop() {
   );
 
   return (
-    <div>
-      <h1>Shop</h1>
+    <Container>
       {loading ? (
         <h1>Loading ....</h1>
       ) : (
         items.map((i) => (
-          <div key={i.id}>
-            <Link to={`/item/${i.id}`}>
-              <h2>{i.title}</h2>
-            </Link>
-            <p>{i.description}</p>
-            <hr />
-          </div>
+          <Card
+            key={i.id}
+            id={i.id}
+            title={i.title}
+            image={i.image}
+            price={parseInt(i.price)}
+          />
         ))
       )}
-    </div>
+    </Container>
   );
 }
 
