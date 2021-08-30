@@ -3,6 +3,7 @@ import Container from "./Container";
 import shopContext from "../ShopContext";
 import CartItem from "./CartItem";
 import Button from "../shared/Button";
+import PayNow from "./PayNow";
 
 function Cart() {
   const context = useContext(shopContext);
@@ -28,8 +29,16 @@ function Cart() {
       <hr />
 
       {context.items.length > 0 ? (
-        "Total :" +
-        context.items.reduce((a, v) => a + parseInt(v.price) * v.quantity, 0)
+        <PayNow>
+          <h3>
+            {"Total :" +
+              context.items.reduce(
+                (a, v) => a + parseInt(v.price) * v.quantity,
+                0
+              )}
+          </h3>
+          <Button primary>Pay now</Button>
+        </PayNow>
       ) : (
         <h3>Your cart is empty</h3>
       )}
