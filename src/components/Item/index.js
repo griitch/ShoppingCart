@@ -7,6 +7,7 @@ import Info from "./Info";
 import Button from "../shared/Button";
 import Form from "./Form";
 import ButtonGrp from "./ButtonGrp";
+import Loading from "../shared/Loading";
 
 function Item() {
   const { id } = useParams();
@@ -20,7 +21,7 @@ function Item() {
   const context = useContext(shopContext);
 
   return loading ? (
-    <h1>Loading .... </h1>
+    <Loading>Loading...</Loading>
   ) : (
     <Container>
       <img src={item.image} alt={item.title} />

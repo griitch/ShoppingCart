@@ -3,6 +3,7 @@ import shopContext from "../ShopContext";
 import useFetch from "../useFetch";
 import Container from "./Container";
 import Card from "../Card";
+import Loading from "../shared/Loading";
 
 function Shop() {
   // eslint-disable-next-line no-unused-vars
@@ -12,21 +13,19 @@ function Shop() {
     "https://fakestoreapi.com/products"
   );
 
-  return (
+  return loading ? (
+    <Loading>Loading....</Loading>
+  ) : (
     <Container>
-      {loading ? (
-        <h1>Loading ....</h1>
-      ) : (
-        items.map((i) => (
-          <Card
-            key={i.id}
-            id={i.id}
-            title={i.title}
-            image={i.image}
-            price={parseInt(i.price)}
-          />
-        ))
-      )}
+      {items.map((i) => (
+        <Card
+          key={i.id}
+          id={i.id}
+          title={i.title}
+          image={i.image}
+          price={parseInt(i.price)}
+        />
+      ))}
     </Container>
   );
 }

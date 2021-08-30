@@ -4,6 +4,8 @@ import shopContext from "../ShopContext";
 import CartItem from "./CartItem";
 import Button from "../shared/Button";
 import PayNow from "./PayNow";
+import MsgContainer from "../shared/MsgContainer";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const context = useContext(shopContext);
@@ -40,7 +42,12 @@ function Cart() {
           <Button primary>Pay now</Button>
         </PayNow>
       ) : (
-        <h3>Your cart is empty</h3>
+        <MsgContainer>
+          <h2>Your cart is empty</h2>
+          <Link to="/shop">
+            <Button>Discover our catalog</Button>
+          </Link>
+        </MsgContainer>
       )}
     </Container>
   );

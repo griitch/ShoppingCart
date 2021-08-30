@@ -1,15 +1,17 @@
 import React from "react";
+import MsgContainer from "../shared/MsgContainer";
 
 function About() {
   return (
-    <div>
-      <h1>About page</h1>
+    <MsgContainer>
+      <h2>About</h2>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis porro
-        possimus dolore quisquam. Sapiente deserunt eius, incidunt placeat
-        tempore beatae!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error animi
+        quibusdam voluptate molestiae. Magni sunt recusandae explicabo fuga
+        consectetur rerum voluptatibus vitae! Doloremque dolore at eveniet
+        facere quis illum officia?
       </p>
-    </div>
+    </MsgContainer>
   );
 }
 

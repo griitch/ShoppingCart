@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import HomePage from "./HomePage";
 import Shop from "./Shop";
 import About from "./About/About";
-import Cart from "./Cart/Cart";
+import Cart from "./Cart";
 import Item from "./Item";
 
 function Routes() {

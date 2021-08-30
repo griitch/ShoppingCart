@@ -9,19 +9,18 @@ function Header() {
   return (
     <Container>
       <Link to="/">
-        <h2>logo</h2>
+        <h2>Home</h2>
       </Link>
 
       <ul>
         <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
           <Link to="/shop">Shop</Link>
         </li>
         <li>
-          <Link to="/cart">Cart (items: {num}) </Link>
-          {/* add an svg here !!!*/}
-        </li>
-        <li>
-          <Link to="/about">About</Link>
+          <Link to="/cart">Cart {num > 0 && `${num} items`} </Link>
         </li>
       </ul>
     </Container>
